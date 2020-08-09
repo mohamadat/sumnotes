@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="node_modules/summernote/dist/summernote.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Title</title>
+</head>
+<body class="bg-dark">
+
+    <h1 class="vi-bg text-center py-3">Buy List</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="thenote">
+                <button class="btn sticky-top btn-lg w-100 bg-dark btn-outline-light vi-bg" onclick="showtext()">Show Msg</button>
+                <button class="btn sticky-top btn-lg w-100 bg-dark btn-outline-light mt-1 vi-bg " onclick="savetxt()">Save</button>
+                <div class="bg-info" id="summernote">Hello Summernote</div>
+            </div>
+            <div class="col-12 py-5" >
+                <p id="sharea" style="font-size: 1.4rem; color: wheat;"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>    
+    <script src="node_modules/summernote/dist/summernote.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#summernote').summernote({
+         
+        });
+
+     
+      
+});
+
+var htmltxt = $('#summernote').summernote('code');
+function showtext(){
+        console.log(htmltxt);
+        document.getElementById('sharea').innerHTML = htmltxt;
+}
+
+function savetxt(){
+            alert(htmltxt);
+        }
+
+       
+    </script>
+</body>
+</html>
